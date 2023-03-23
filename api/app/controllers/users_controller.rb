@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
 
     before_action :session_expired?, only: [:check_login_status]
+    rescue_from StandardError, with: :standard_error
 
 
     def register

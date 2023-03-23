@@ -44,10 +44,17 @@ class ApplicationController < ActionController::API
     #     session[:uid].to_i
     # end
 
-    # 
+    # find user
 
     def user 
         User.find(session[:uid].to_i)
+    end
+
+
+    # rescue all common errors
+
+    def standard_error(exception)
+        app_response(message: "Failed", data: {info: exception.message}, status: :unprocessable_entity)
     end
 
 end

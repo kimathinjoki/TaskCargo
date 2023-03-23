@@ -1,6 +1,6 @@
 class TodosController < ApplicationController
     before_action :session_expired?
-    rescue_from ArgumentError, with: :invalid_priority
+    rescue_from StandardError, with: :standard_error
 
 
     def create 
@@ -13,9 +13,19 @@ class TodosController < ApplicationController
        end
     end
 
-    def invalid_priority 
-        app_response(message: "invalid priority", data: {info: err.message}, status: :unprocessable_entity)
+
+    def update 
+
+        todo = user.todos.find(params[:id]).update(todo_params)
+        if todo
+            app_response(data: {info: 'updated todo successfully'})
+        else  
+            app_response(data: {info: 'not updated'}, message: "failed" )
+        end
+
     end
+
+    
 
     private 
 
