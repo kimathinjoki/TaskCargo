@@ -135,3 +135,51 @@ Processing by UsersController#register as */*
 Completed 200 OK in 266ms (Views: 0.8ms | ActiveRecord: 10.3ms | Allocations: 4990)
 
 
+Started GET "/users/login/check" for 127.0.0.1 at 2023-03-23 00:50:21 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/users/login/check" for 127.0.0.1 at 2023-03-23 00:53:25 -0700
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/users/login/check" for 127.0.0.1 at 2023-03-23 00:53:43 -0700
+  
+SyntaxError (/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:16: syntax error, unexpected ';', expecting ']'
+        session[;expiry] = 6.hours.from_now
+                ^
+/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:33: syntax error, unexpected '='
+        session[:expiry] || = Time.now
+                            ^
+):
+  
+app/controllers/application_controller.rb:16: syntax error, unexpected ';', expecting ']'
+app/controllers/application_controller.rb:33: syntax error, unexpected '='
+app/controllers/application_controller.rb:16: syntax error, unexpected ';', expecting ']'
+app/controllers/application_controller.rb:33: syntax error, unexpected '='
+app/controllers/users_controller.rb:1:in `<main>'
+Started GET "/users/login/check" for 127.0.0.1 at 2023-03-23 00:54:22 -0700
+  
+SyntaxError (/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:16: syntax error, unexpected ';', expecting ']'
+        session[;expiry] = 6.hours.from_now
+                ^
+):
+  
+app/controllers/application_controller.rb:16: syntax error, unexpected ';', expecting ']'
+app/controllers/application_controller.rb:16: syntax error, unexpected ';', expecting ']'
+app/controllers/users_controller.rb:1:in `<main>'
+Started GET "/users/login/check" for 127.0.0.1 at 2023-03-23 00:54:52 -0700
+Processing by UsersController#check_login_status as */*
+Filter chain halted as :session_expired? rendered or redirected
+Completed 401 Unauthorized in 7ms (Views: 0.7ms | Allocations: 1092)
+
+
+Started GET "/users/login/check" for 127.0.0.1 at 2023-03-23 01:01:47 -0700
+Processing by UsersController#check_login_status as */*
+Filter chain halted as :session_expired? rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 0.4ms | Allocations: 484)
+
+
