@@ -1,0 +1,31 @@
+#logout{
+    position: absolute;
+    top: 5%;
+    left: 90%;
+    size: 3em;
+    background: transparent
+
+}
+
+#selection{
+    min-height: 100px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    border-color: greenyellow;
+    padding: 10px;
+    border: 5px;
+  }
+
+  #taskList{
+    min-height: 550px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    border-color: greenyellow;
+    padding: 10px;
+    border: 5px;
+  }
+  
+
+  #create_form{
+    margin: auto;
+  }
