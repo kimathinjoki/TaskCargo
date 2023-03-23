@@ -11,5 +11,9 @@ Rails.application.routes.draw do
 
   delete 'users/logout', to: "users#logout"
 
+  # todos
+
+  post '/todos', to: "todos#create"
+
 
 end

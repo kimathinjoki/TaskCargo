@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     def register
         user = User.create(user_params)
         if user.valid? 
-            save_user(id: user.id)
+            save_user(user.id)
             app_response(message:"Registration was successful", status: :created, data: user)
         else
             app_response(message:"Registration failed", status: :unprocessable_entity, data: user.errors)
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
         # user = Userr.find_by(username: user_params[:username])
 
         if user&.authenticate(user_params[:password])
-            save_user(id: user.id)
+            save_user(user.id)
             app_response(message: "Login successful", status: :ok, data: user)
         else
             app_response(message: "Invalid username orr password", status: :unauthorized)

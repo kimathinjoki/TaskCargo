@@ -39,4 +39,15 @@ class ApplicationController < ActionController::API
    
     end
 
+
+    # def uid 
+    #     session[:uid].to_i
+    # end
+
+    # 
+
+    def user 
+        User.find(session[:uid].to_i)
+    end
+
 end
