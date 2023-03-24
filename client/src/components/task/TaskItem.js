@@ -16,7 +16,7 @@ function TaskItem(){
 
                     <div id="item_footer">
                         <h6><span>Status:</span> <span>Created</span>  </h6>
-                        <h6 id="del_edit"><span><AiOutlineEdit/></span> <span><AiOutlineDelete/></span></h6>
+                        <h6 id="del_edit"><span><AiOutlineEdit/></span>  <span><AiOutlineDelete/></span></h6>
                     </div>
                     
                    
