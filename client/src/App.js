@@ -1,17 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import {React, useState} from 'react';
 import Home from './components/home/Home';
 import Auth from './components/auth/Auth';
 import Landingpage from './components/home/Landingpage';
  import {AiOutlineLogin} from "react-icons/ai"
- import {Route, Routes, Link} from 'react-router-dom'
+ import {Route, Routes, Link, Navigate} from 'react-router-dom'
 
 function App() {
 
 
-function auth(){
-  <Link to="/auth"></Link>
-}
+  const [user, setUser] = useState('');
+
+  function signup(username) {
+		setUser(username);
+	}
+
+
+
+
 
 
   return (
@@ -35,8 +41,11 @@ function auth(){
 
       <Routes>
         <Route path="/" element={<Landingpage/>}/>
-       <Route path="/auth" element={<Auth/>}/>
        <Route path="/home" element={<Home/>}/>
+       <Route path="/auth" element={
+       
+        !user ? <Auth signup={signup} /> : <Navigate to="/home"></Navigate>
+       }/>
       </Routes>
 
       

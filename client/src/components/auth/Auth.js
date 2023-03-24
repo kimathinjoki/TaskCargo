@@ -1,13 +1,28 @@
-import React from "react";
+import {React, useState}from "react";
 import './Auth.css'
 
 
-function Auth(){
+function Auth( {signup} ){
 
-    return(
+    const [email, setEmail] = useState('')
+    const [username, setUsername] = useState('');
+	const [password, setPassword] = useState('');
 
 
-        
+	function handleSubmit(e) {
+		e.preventDefault();
+		fetch(`/signup/`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ email, username, password }),
+		})
+			.then((r) => r.json())
+			.then((user) => signup(user));
+	}
+
+    return( 
         <div className="App-header" >
 
 
