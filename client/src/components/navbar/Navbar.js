@@ -1,14 +1,15 @@
 import React from "react";
 import "./Navbar.css"
+import { Link } from "react-router-dom";
 
 
 function Navbar(){
     return(
         <>
             <nav>
-                 <a href="#">HOME</a>
-                <a href="#">TASKS</a>
-                <a href="#">ABOUT</a>
+                 <Link to="/home">HOME</Link>
+                <Link to="/home">TASKS</Link>
+                <Link to="/about">ABOUT</Link>
                 <div id="indicator"></div>
             </nav>
         </>
