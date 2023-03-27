@@ -1,5 +1,5 @@
 import './App.css';
-import {React, useState} from 'react';
+import {React, useState, useEffect} from 'react';
 import Home from './components/home/Home';
 import Auth from './components/auth/Auth';
 import Landingpage from './components/home/Landingpage';
@@ -9,11 +9,30 @@ import Landingpage from './components/home/Landingpage';
 function App() {
 
 
-  const [user, setUser] = useState('');
+  const [user, setUser] = useState(null);
 
-  function signup(username) {
-		setUser(username);
+  function signup(user) {
+		setUser(user);
 	}
+
+
+
+  useEffect(() => {
+    // auto-login
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+
+  function handleLogout() {
+    fetch("/logout", { method: "DELETE" }).then((r) => {
+      if (r.ok) {
+        setUser(null);
+      }
+    });
+  }
 
 
 
@@ -41,7 +60,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Landingpage/>}/>
-       <Route path="/home" element={<Home/>}/>
+       <Route path="/home" element={<Home handleLogout={handleLogout} user={user}/>}/>
        <Route path="/auth" element={
        
         !user ? <Auth signup={signup} /> : <Navigate to="/home"></Navigate>
