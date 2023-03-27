@@ -54,4 +54,4 @@ Mozilla Public License Version 2.0
 ## Author
 This repository is maintained by:
 
-- [Kimathi Njkoki](https://github.com/kimathinjoki) 
+- [Kimathi Njoki](https://github.com/kimathinjoki) 

@@ -21,5 +21,9 @@ Rails.application.routes.draw do
 
   get '/todos', to: 'todos#index'
 
+  # verify auth
+
+  get '/verify', to: 'applications#verify_auth'
+
 
 end

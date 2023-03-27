@@ -1,5 +1,6 @@
 class TodosController < ApplicationController
-    before_action :session_expired?
+    # before_action :verify_auth
+    before action :session_expired?
     rescue_from StandardError, with: :standard_error
 
 

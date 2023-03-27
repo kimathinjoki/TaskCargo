@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
     def login 
 
-        sql = "userrname = :username OR email = :email"
+        sql = "username = :username OR email = :email"
 
         user = User.where(sql, { username: user_params[:username],email: user_params[:email] }).first
 
@@ -26,7 +26,8 @@ class UsersController < ApplicationController
 
         if user&.authenticate(user_params[:password])
             save_user(user.id)
-            app_response(message: "Login successful", status: :ok, data: user)
+            token = encode(user.id, user.email)
+            app_response(message: "Login successful", status: :ok, data: {user:user, token:token})
         else
             app_response(message: "Invalid username orr password", status: :unauthorized)
         end

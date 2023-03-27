@@ -466,3 +466,156 @@ Processing by TodosController#index as */*
 Completed 200 OK in 32ms (Views: 10.2ms | ActiveRecord: 3.6ms | Allocations: 7337)
 
 
+Started POST "/users/login" for 127.0.0.1 at 2023-03-27 01:27:27 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:5: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...scue_from StandardError, with :standard_error
+...                              ^
+/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:47: syntax error, unexpected '['
+...ken = auth_headers.split(' ').[1]
+...                              ^
+/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:49: syntax error, unexpected '\n', expecting =>
+/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:119: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/application_controller.rb:5: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/application_controller.rb:47: syntax error, unexpected '['
+app/controllers/application_controller.rb:49: syntax error, unexpected '\n', expecting =>
+app/controllers/application_controller.rb:119: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/application_controller.rb:5: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/application_controller.rb:47: syntax error, unexpected '['
+app/controllers/application_controller.rb:49: syntax error, unexpected '\n', expecting =>
+app/controllers/application_controller.rb:119: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users_controller.rb:1:in `<main>'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-27 01:30:27 -0700
+  
+SyntaxError (/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:47: syntax error, unexpected '['
+...ken = auth_headers.split(' ').[1]
+...                              ^
+/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:49: syntax error, unexpected '\n', expecting =>
+/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:119: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/application_controller.rb:47: syntax error, unexpected '['
+app/controllers/application_controller.rb:49: syntax error, unexpected '\n', expecting =>
+app/controllers/application_controller.rb:119: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/application_controller.rb:47: syntax error, unexpected '['
+app/controllers/application_controller.rb:49: syntax error, unexpected '\n', expecting =>
+app/controllers/application_controller.rb:119: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users_controller.rb:1:in `<main>'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-27 01:30:29 -0700
+  
+SyntaxError (/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:47: syntax error, unexpected '['
+...ken = auth_headers.split(' ').[1]
+...                              ^
+/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:49: syntax error, unexpected '\n', expecting =>
+/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:119: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/application_controller.rb:47: syntax error, unexpected '['
+app/controllers/application_controller.rb:49: syntax error, unexpected '\n', expecting =>
+app/controllers/application_controller.rb:119: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/application_controller.rb:47: syntax error, unexpected '['
+app/controllers/application_controller.rb:49: syntax error, unexpected '\n', expecting =>
+app/controllers/application_controller.rb:119: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users_controller.rb:1:in `<main>'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-27 01:30:56 -0700
+  
+SyntaxError (/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:49: syntax error, unexpected '\n', expecting =>
+/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:119: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/application_controller.rb:49: syntax error, unexpected '\n', expecting =>
+app/controllers/application_controller.rb:119: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/application_controller.rb:49: syntax error, unexpected '\n', expecting =>
+app/controllers/application_controller.rb:119: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users_controller.rb:1:in `<main>'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-27 01:31:20 -0700
+  
+SyntaxError (/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:49: syntax error, unexpected '\n', expecting =>
+/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:119: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/application_controller.rb:49: syntax error, unexpected '\n', expecting =>
+app/controllers/application_controller.rb:119: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/application_controller.rb:49: syntax error, unexpected '\n', expecting =>
+app/controllers/application_controller.rb:119: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users_controller.rb:1:in `<main>'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-27 01:39:39 -0700
+  
+SyntaxError (/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:49: syntax error, unexpected '\n', expecting =>):
+  
+app/controllers/application_controller.rb:49: syntax error, unexpected '\n', expecting =>
+app/controllers/application_controller.rb:49: syntax error, unexpected '\n', expecting =>
+app/controllers/users_controller.rb:1:in `<main>'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-27 01:43:32 -0700
+  
+SyntaxError (/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:119: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/application_controller.rb:119: syntax error, unexpected `end', expecting end-of-input
+app/controllers/application_controller.rb:119: syntax error, unexpected `end', expecting end-of-input
+app/controllers/users_controller.rb:1:in `<main>'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-27 01:43:49 -0700
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"kimkim", "password"=>"[FILTERED]", "user"=>{"username"=>"kimkim"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fd790ad3f80>, params: {"username"=>"kimkim", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"kimkim"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fd790ad3f80>, params: {"username"=>"kimkim", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"kimkim"}} }[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (userrname = 'kimkim' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `login'
+Completed 422 Unprocessable Entity in 32ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 22029)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-27 01:44:15 -0700
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"kimkim", "password"=>"[FILTERED]", "user"=>{"username"=>"kimkim"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fd790e130d8>, params: {"username"=>"kimkim", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"kimkim"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fd790e130d8>, params: {"username"=>"kimkim", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"kimkim"}} }[0m
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'kimkim' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fd790e130d8>, params: {"username"=>"kimkim", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"kimkim"}} }[0m
+Completed 422 Unprocessable Entity in 336ms (Views: 0.2ms | ActiveRecord: 5.1ms | Allocations: 17349)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-27 01:53:36 -0700
+  
+SyntaxError (/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:92: syntax error, unexpected `end'
+    end
+    ^~~
+/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:131: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/application_controller.rb:92: syntax error, unexpected `end'
+app/controllers/application_controller.rb:131: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/application_controller.rb:92: syntax error, unexpected `end'
+app/controllers/application_controller.rb:131: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users_controller.rb:1:in `<main>'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-27 01:59:19 -0700
+  
+SyntaxError (/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:92: syntax error, unexpected `end'
+    end
+    ^~~
+/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:131: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/application_controller.rb:92: syntax error, unexpected `end'
+app/controllers/application_controller.rb:131: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/application_controller.rb:92: syntax error, unexpected `end'
+app/controllers/application_controller.rb:131: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users_controller.rb:1:in `<main>'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-27 01:59:21 -0700
+  
+SyntaxError (/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:92: syntax error, unexpected `end'
+    end
+    ^~~
+/Users/kimathinjoki/Development/code/phase-4/taskCargo/api/app/controllers/application_controller.rb:131: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/application_controller.rb:92: syntax error, unexpected `end'
+app/controllers/application_controller.rb:131: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/application_controller.rb:92: syntax error, unexpected `end'
+app/controllers/application_controller.rb:131: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users_controller.rb:1:in `<main>'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-27 02:04:57 -0700
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"kimkim", "password"=>"[FILTERED]", "user"=>{"username"=>"kimkim"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fd7915e6918>, params: {"username"=>"kimkim", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"kimkim"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fd7915e6918>, params: {"username"=>"kimkim", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"kimkim"}} }[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'kimkim' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fd7915e6918>, params: {"username"=>"kimkim", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"kimkim"}} }[0m
+Completed 200 OK in 287ms (Views: 0.6ms | ActiveRecord: 1.1ms | Allocations: 3305)
+
+

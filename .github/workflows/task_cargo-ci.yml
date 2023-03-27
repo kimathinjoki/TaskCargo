@@ -1,0 +1,24 @@
+name: TaskCargoCI
+
+#  conditions that  trigger this action
+on: 
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+
+#  functions that will rrun withn the workflow
+
+jobs:
+  rspec:
+    runs_on: macos - latest
+    steps:
+      - uses: actions/checkout@v3
+      - user: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0.0'
+      - run: bundle install
+      - run: bundle exec rails db:migrate RAILS_ENV=test
+      - run: bundle exec rspec spec
