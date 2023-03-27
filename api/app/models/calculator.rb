@@ -25,6 +25,10 @@ class Calculator
         def square 
             @opt1*opt1
         end
+
+        def cube 
+            opt1*opt1*opt1
+        end
     
     
     
