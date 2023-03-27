@@ -619,3 +619,43 @@ Processing by UsersController#login as */*
 Completed 200 OK in 287ms (Views: 0.6ms | ActiveRecord: 1.1ms | Allocations: 3305)
 
 
+Started GET "/ws" for ::1 at 2023-03-27 03:45:38 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-03-27 03:45:41 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-03-27 03:45:46 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-03-27 03:45:56 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-03-27 03:58:05 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-03-27 03:58:47 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-03-27 03:59:56 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-03-27 04:02:50 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-03-27 04:26:45 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-03-27 04:35:17 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
