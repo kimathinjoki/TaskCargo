@@ -29,3 +29,15 @@
 #del_edit{
     margin-left:70%;
 }
+
+#medium{
+    color: orange;
+}
+
+#high{
+    color: red;
+}
+
+#low{
+    color:blue
+}

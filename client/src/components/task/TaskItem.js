@@ -3,20 +3,36 @@ import './TaskItem.css'
 import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai';
 
 
-function TaskItem(){
+function TaskItem({task, handleEdit}){
+
+
+    function handlePriority(){
+        if(task.priority === "HIGH"){
+            return "high"
+        }else if(task.priority === "MEDIUM"){
+            return "medium"
+        }else if(task.priority === "LOW"){
+            return "low"
+        }
+    }
+
+
+
+
+
     return(
         <>
         <div className="col-11" id="task_item">
             <div className="card" id="task_card" >
                 <div className="card-body">
-                    <h5>Card title </h5>
+                    <h5 id={handlePriority}>{task.title}</h5>
                     <div>
-                        <p id="description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p id="description"> {task.description}</p>
                     </div>
 
                     <div id="item_footer">
-                        <h6><span>Status:</span> <span>Created</span>  </h6>
-                        <h6 id="del_edit"><span><AiOutlineEdit/></span>  <span><AiOutlineDelete/></span></h6>
+                        <h6><span>Status:</span> <span>{task.status}</span>  </h6>
+                        <h6 id="del_edit" onClick={handleEdit}><span><AiOutlineEdit/></span>  <span><AiOutlineDelete/></span></h6>
                     </div>
                     
                    
