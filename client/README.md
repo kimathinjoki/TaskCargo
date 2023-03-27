@@ -1,7 +1,7 @@
 ## TASK-CARGO
 
 ## Description
-Welcome to **My-TODO-App**. <br>
+Welcome to **TaskCargo**. <br>
 With this todo app, you can keep track of all your tasks and stay organized throughout your day. Simply add your tasks to the app and mark them as complete when you've finished them. You can also categorize your tasks by project, priority level, or any other custom tags you choose. With a user-friendly interface and simple design, this app makes it easy to stay on top of your to-do list and increase your productivity.
   <br>Enjoy the experience Cheers!
 
@@ -18,8 +18,8 @@ To get the code .
 
 ## project Set-up
 ### Option 1 (live link)
-If you want to see the app running in real-time directly, you can just click on this link:
-[]
+If you want to see the app running in real-time directly, you can just click on this [link](https://task-cargo.vercel.app/):
+`https://task-cargo.vercel.app/`
 
 ### Option 2 (Cloning the repository)
 1. Cloning the repository:
