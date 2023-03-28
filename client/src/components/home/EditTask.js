@@ -1,38 +1,39 @@
 import React, {useState} from "react";
-import "./Home.css"
 import {GrFormAdd} from "react-icons/gr"
 
 
-function CreateForm({tasks,setTasks}){
+function EditTask({task}){
 
-    const [title, setTitle] = useState('')
-    const [description, setDescription] = useState('')
-    const [priority, setPriority] = useState(0)
 
-    function handleSubmit(e){
+    const [title, setTitle] = useState(task.title)
+    const [description, setDescription] = useState(task.description)
+    const [priority, setPriority] = useState(task.priority)
+    const [status, setStatus] = useState(task.status)
+
+    function handleEdit(e){
         e.preventDefault();
         // const user_id = sessionStorage.getItem('user_id')
-        fetch('http://127.0.0.1:3000/todos',{
-            method: "POST",
+        fetch(`http://127.0.0.1:3000/todos/${task.id}`,{
+            method: "PATCH",
             headers: {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
               title,
               description,
-              priority
+              priority,
+              status
         })
     })
         .then(r=> r.json())
-        .then(data=> setTasks(...tasks,data))
+        .then(data=> console.log(data))
     }
-
 
 
 
     return(
         <>
-            <form className="row gx-3 gy-2 align-items-center" id="create_form" onSubmit={handleSubmit}>
+            <form className="row gx-3 gy-2 align-items-center" id="create_form" onSubmit={handleEdit}>
                 <div className="col-sm-3">
                     <label className="visually-hidden" for="specificSizeInputName">Title</label>
                      <input type="text" className="form-control" id="specificSizeInputName" placeholder="Title" Value={title} onChange={(e)=>setTitle(e.target.value)}/>
@@ -52,6 +53,20 @@ function CreateForm({tasks,setTasks}){
                             <option value="2">High</option>
                         </select>
                     </div>
+
+                    <div className="col-sm-2">
+                        <label className="visually-hidden" for="specificSizeSelect">Priority</label>
+                        <select className="form-select" id="specificSizeSelect" value={status} onChange={(e)=> setStatus(e.target.value)}>
+                            <option selected>Status...</option>
+                            <option value="0">Created</option>
+                            <option value="1">Started</option>
+                            <option value="2">Completed</option>
+                            <option value="3">Canceled</option>
+                        </select>
+                    </div>
+
+
+
                     <div className="col-1">
                          <button type="submit" className="btn btn-primary"><GrFormAdd/></button>
                     </div>
@@ -60,4 +75,4 @@ function CreateForm({tasks,setTasks}){
     )
 }
 
-export default CreateForm;
+export default EditTask;

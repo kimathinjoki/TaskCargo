@@ -3,63 +3,28 @@ import './Home.css'
 import Navbar from "../navbar/Navbar";
 import TaskItem from "../task/TaskItem";
 import CreateForm from "./CreateForm";
+import EditTask from "./EditTask";
 import { AiOutlineLogout } from 'react-icons/ai';
+import { Route, Routes } from "react-router-dom";
 
 
 
 function Home({handleLogout, user}){
 
     const [tasks, setTasks] = useState([])
-    const [title, setTitle] = useState('')
-    const [description, setDescription] = useState('')
-    const [priority, setPriority] = useState(0)
+
 
 
     useEffect(()=>{
-        fetch("/todos")
+        fetch("http://127.0.0.1:3000/todos")
         .then((r) => r.json())
         .then(setTasks)
     },[])
 
-    function handleSubmit(e){
-        e.preventDefault();
-        const user_id = sessionStorage.getItem('user_id')
-        fetch('/todos',{
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              title,
-              description,
-              priority,
-              user_id
-        })
-    })
-        .then(r=> r.json())
-        .then(data=> setTasks(...tasks,data))
-    }
+ 
 
 
-    function handleEdit(e){
-        e.preventDefault();
-        const user_id = sessionStorage.getItem('user_id')
-        fetch('/todos',{
-            method: "PATCH",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              title,
-              description,
-              priority,
-              user_id
-        })
-    })
-        .then(r=> r.json())
-        .then(data=> setTasks(...tasks,data))
-    }
-   
+
 
 
 
@@ -78,7 +43,7 @@ function Home({handleLogout, user}){
             
                {/* contain a form to add a task */}
 
-               <CreateForm handleSubmit={handleSubmit}/>
+               <CreateForm tasks={tasks} setTasks={setTasks}/>
             
 
 
@@ -95,7 +60,13 @@ function Home({handleLogout, user}){
             <div  className="row">
 
                 { tasks.length > 0 ? (
-                    tasks.map((task) => <TaskItem task={task} handleEdit={handleEdit}/>)) : null }
+                    tasks.map((task) => <TaskItem task={task}/>)) : null }
+
+                    <Routes>
+                        <Route path="/todo/edit" element={<EditTask/>}/>
+                    </Routes>
+
+
 
                     
             </div> 

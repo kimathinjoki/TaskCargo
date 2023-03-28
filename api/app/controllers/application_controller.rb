@@ -4,6 +4,23 @@ class ApplicationController < ActionController::API
 
     rescue_from StandardError, with: :standard_error
 
+
+    # Enable CORS Headers
+#   configure do
+#     enable :cross_origin
+#   end
+
+#   before do
+#     response.headers['Access-Control-Allow-Origin'] = '*'
+#   end
+
+#   options "*" do
+#     response.headers["Access-Control-Allow-Methods"] = "GET, PUT, POST, DELETE, OPTIONS"
+#     response.headers["Access-Control-Allow-Headers"] = "Authorization, Content-Type, Accept, X-User-Email, X-Auth-Token"
+#     response.headers["Access-Control-Allow-Origin"] = "*"
+#     200
+#   end
+
     # has data into web token
 
     def encode(uid,email)
@@ -93,7 +110,7 @@ class ApplicationController < ActionController::API
     end
 
     #  get user session
-    
+
     def user_session 
         User.find(session[:uid].to_i)
     end

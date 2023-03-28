@@ -32,7 +32,7 @@ button {
   border: none;
   padding: 10px 20px;
   font-size: 24px;
-  position: absolute;
+  /* position: absolute; */
   background: transparent;
   color: #ff0000;
   /* text-transform: uppercase; */

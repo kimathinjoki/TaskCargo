@@ -29,7 +29,7 @@ class UsersController < ApplicationController
             token = encode(user.id, user.email)
             app_response(message: "Login successful", status: :ok, data: {user:user, token:token})
         else
-            app_response(message: "Invalid username orr password", status: :unauthorized)
+            app_response(message: "Invalid username or password", status: :unauthorized)
         end
     
 
@@ -46,7 +46,8 @@ class UsersController < ApplicationController
 
 
     def check_login_status  
-        app_response(message: "success", status: :ok)
+        user = user_session
+        app_response(message: "success", data: user, status: :ok)
     end
 
 

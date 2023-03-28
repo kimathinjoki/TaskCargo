@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState} from "react";
+import { Link, Route, Routes } from "react-router-dom";
 import './TaskItem.css'
 import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai';
+import EditTask from "../home/EditTask";
+
+function TaskItem({task}){
 
 
-function TaskItem({task, handleEdit}){
 
 
     function handlePriority(){
@@ -15,7 +18,6 @@ function TaskItem({task, handleEdit}){
             return "low"
         }
     }
-
 
 
 
@@ -32,14 +34,20 @@ function TaskItem({task, handleEdit}){
 
                     <div id="item_footer">
                         <h6><span>Status:</span> <span>{task.status}</span>  </h6>
-                        <h6 id="del_edit" onClick={handleEdit}><span><AiOutlineEdit/></span>  <span><AiOutlineDelete/></span></h6>
+                        <h6 id="del_edit"><span><Link to="/todo/edit"><AiOutlineEdit/></Link></span>  <span><AiOutlineDelete/></span></h6>
                     </div>
                     
                    
                     {/* <a target={'_blank'} href="#" className="btn btn-primary">{'VISIT PAGE'}</a> */}
                 </div>
             </div>
-        </div>    
+        </div>  
+        
+        <Routes>
+            <Route path="/todo/edit" element={<EditTask task={task}/>}/>
+        </Routes>
+
+
         </>
     )
 }

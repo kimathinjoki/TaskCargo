@@ -17,17 +17,17 @@ function App() {
 
 
 
-  useEffect(() => {
-    // auto-login
-    fetch("/me").then((r) => {
-      if (r.ok) {
-        r.json().then((user) => setUser(user));
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   // auto-login
+  //   fetch("http://127.0.0.1:3000/users/login/check").then((r) => {
+  //     if (r.ok) {
+  //       r.json().then((user) => setUser(user));
+  //     }
+  //   });
+  // }, []);
 
   function handleLogout() {
-    fetch("/logout", { method: "DELETE" }).then((r) => {
+    fetch("http://127.0.0.1:3000/users/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
         setUser(null);
       }
