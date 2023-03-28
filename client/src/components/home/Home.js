@@ -16,9 +16,9 @@ function Home({handleLogout, user}){
 
 
     useEffect(()=>{
-        fetch("http://127.0.0.1:3000/todos")
+        fetch("https://taskcargobacke.onrender.com/todos")
         .then((r) => r.json())
-        .then(setTasks)
+        .then((r)=>setTasks(r.data))
     },[])
 
  

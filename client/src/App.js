@@ -20,15 +20,15 @@ function App() {
   // useEffect(() => {
   //   // auto-login
   //   fetch("http://127.0.0.1:3000/users/login/check").then((r) => {
-  //     if (r.ok) {
+  //     if (r.status === 200) {
   //       r.json().then((user) => setUser(user));
   //     }
   //   });
   // }, []);
 
   function handleLogout() {
-    fetch("http://127.0.0.1:3000/users/logout", { method: "DELETE" }).then((r) => {
-      if (r.ok) {
+    fetch("https://taskcargobacke.onrender.com//users/logout", { method: "DELETE" }).then((r) => {
+      if (r.status === 200) {
         setUser(null);
       }
     });

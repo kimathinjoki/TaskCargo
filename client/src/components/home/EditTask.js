@@ -13,7 +13,7 @@ function EditTask({task}){
     function handleEdit(e){
         e.preventDefault();
         // const user_id = sessionStorage.getItem('user_id')
-        fetch(`http://127.0.0.1:3000/todos/${task.id}`,{
+        fetch(`https://taskcargobacke.onrender.com/todos/${task.id}`,{
             method: "PATCH",
             headers: {
               "Content-Type": "application/json",

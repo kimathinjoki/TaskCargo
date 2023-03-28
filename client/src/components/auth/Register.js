@@ -31,7 +31,7 @@ function Register({signup}){
 
     function handleSubmit(e){
 		e.preventDefault();
-		fetch("http://127.0.0.1:3000/users", {
+		fetch("https://taskcargobacke.onrender.com/users", {
 			mode: 'no-cors',
 			method: 'POST',
 			headers: {

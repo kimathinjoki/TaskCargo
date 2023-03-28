@@ -42,10 +42,10 @@ function TaskItem({task}){
                 </div>
             </div>
         </div>  
-        
-        <Routes>
+
+        {/* <Routes>
             <Route path="/todo/edit" element={<EditTask task={task}/>}/>
-        </Routes>
+        </Routes> */}
 
 
         </>
