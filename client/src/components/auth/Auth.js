@@ -1,6 +1,7 @@
 import {React, useState}from "react";
 import './Auth.css'
 import Register from "./Register";
+import axios from 'axios';
 
 
 function Auth( {signup} ){
@@ -8,56 +9,54 @@ function Auth( {signup} ){
 
     const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
-	const [isLoading, setIsLoading] = useState(false);
+	// const [isLoading, setIsLoading] = useState(false);
+	// const [email, setEmail] = useState('');
 
 
 	
 
-    function handleLogin(e){
-        e.preventDefault();
-        fetch("http://127.0.0.1:3000/users/login",{
-			mode: 'no-cors',
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({ username, password }),
-		})
-            .then((r) =>{
-				setIsLoading(false);
-                if(r.ok){
-                    r.json().then((user)=> signup(user))
-                }
-            })
-            // .then((user) => signup(user));
+    // function handleLogin(e){
+    //     e.preventDefault();
+    //     fetch("http://127.0.0.1:3000/users/login",{
+	// 		mode: 'no-cors',
+	// 		method: 'POST',
+	// 		headers: {
+	// 			'Content-Type': 'application/json',
+	// 		},
+	// 		body: JSON.stringify({ username, password }),
+	// 	})
+    //         .then((r) =>{
+	// 			setIsLoading(false);
+    //             if(r.ok){
+    //                 r.json().then((user)=> signup(user))
+    //             }
+    //         })
+    // }
 
-    }
+	const handleLogin = event => {
+		event.preventDefault();
+	
+		axios.post('http://localhost:3000/users/login', {
+	  username,
+	 password
+	})
+	.then(response => {
+	  console.log(response);
+	  // do something with the response, such as saving the user information
+	  if (response.status === 200) {
+		const id = response.data.id;
+		signup(response.data)
+		localStorage.setItem('id', id);
+		// setIsLoading(true);
+	  }
+	})
+}
 
 
 
     return( 
         <div className="App-header" >
 
-
-
-<form onSubmit={handleLogin}>
-      <h3>Login With Username</h3>
-      <label htmlFor="username">Username: </label>
-      <input
-        type="text"
-        id="username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-	  <label htmlFor="password">password: </label>
-	  <input
-        type="text"
-        id="username"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="submit" id="btn">Login</button>
-    </form>
 
 
 <div className="login-wrap">
