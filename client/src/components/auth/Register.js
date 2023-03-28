@@ -1,10 +1,32 @@
 import React, {useState} from "react";
+import axios from 'axios';
 
 function Register({signup}){
 
     const [email, setEmail] = useState('')
     const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
+
+
+    // const handleSubmit = event => {
+	// 	event.preventDefault();
+	
+	// 	axios.post('http://localhost:3000/users', {
+	//   username,
+    //   email,
+	//  password
+	// })
+	// .then(response => {
+	//   console.log(response);
+	
+	//   if (response.status === 200) {
+	// 	const id = response.data.id;
+	// 	signup(response.data)
+	// 	localStorage.setItem('id', id);
+	
+	//   }
+	// })
+    // }
 
 
     function handleSubmit(e){
@@ -19,12 +41,10 @@ function Register({signup}){
 			body: JSON.stringify({ email, username, password }),
 		})
         .then((r) => {
-            if (r.ok) {
+            if (r.status === 200) {
               r.json().then((user) => signup(user));
             }
           });
-			// .then((r) => r.json())
-			// .then((user) => signup(user));
 	}
 
 

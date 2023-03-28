@@ -1145,3 +1145,151 @@ Processing by TodosController#index as */*
 Completed 422 Unprocessable Entity in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 183)
 
 
+Started GET "/main.160ce3d63221160f9395.hot-update.json" for ::1 at 2023-03-28 04:08:11 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/main.160ce3d63221160f9395.hot-update.json"):
+  
+Started GET "/home" for ::1 at 2023-03-28 04:08:11 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/home"):
+  
+Started GET "/home" for ::1 at 2023-03-28 04:08:18 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/home"):
+  
+Started GET "/home" for ::1 at 2023-03-28 04:08:19 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/home"):
+  
+Started GET "/home" for ::1 at 2023-03-28 04:08:44 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/home"):
+  
+Started GET "/home" for ::1 at 2023-03-28 04:08:44 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/home"):
+  
+Started GET "/auth" for ::1 at 2023-03-28 04:13:18 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/auth"):
+  
+Started GET "/auth" for ::1 at 2023-03-28 04:13:19 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/auth"):
+  
+Started GET "/auth" for ::1 at 2023-03-28 04:13:53 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/auth"):
+  
+Started GET "/auth" for ::1 at 2023-03-28 04:13:54 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/auth"):
+  
+Started POST "/users/login" for ::1 at 2023-03-28 05:54:26 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"kimkim", "password"=>"[FILTERED]", "user"=>{"username"=>"kimkim"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f9cffe86540>, params: {"username"=>"kimkim", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"kimkim"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f9cffe86540>, params: {"username"=>"kimkim", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"kimkim"}} }[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'kimkim' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f9cffe86540>, params: {"username"=>"kimkim", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"kimkim"}} }[0m
+Completed 200 OK in 249ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 38038)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 05:54:26 -0700
+Processing by TodosController#index as */*
+Completed 422 Unprocessable Entity in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 268)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 05:54:26 -0700
+Processing by TodosController#index as */*
+Completed 422 Unprocessable Entity in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 183)
+
+
+Started GET "/main.c11802f4be3e1c3069cb.hot-update.json" for ::1 at 2023-03-28 05:56:23 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/main.c11802f4be3e1c3069cb.hot-update.json"):
+  
+Started GET "/home" for ::1 at 2023-03-28 05:56:23 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/home"):
+  
+Started GET "/home" for ::1 at 2023-03-28 05:56:28 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/home"):
+  
+Started GET "/home" for ::1 at 2023-03-28 05:56:29 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/home"):
+  
+Started GET "/home" for ::1 at 2023-03-28 05:56:32 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/home"):
+  
+Started POST "/users" for 127.0.0.1 at 2023-03-28 08:39:29 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+NameError (uninitialized constant ApplicationController::Headers):
+  
+app/controllers/application_controller.rb:8:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/users_controller.rb:1:in `<main>'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 08:40:59 -0700
+  
+NameError (uninitialized constant ApplicationController::Headers):
+  
+app/controllers/application_controller.rb:8:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/users_controller.rb:1:in `<main>'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 08:41:29 -0700
+  
+NoMethodError (undefined method `enable' for ApplicationController:Class):
+  
+app/controllers/application_controller.rb:10:in `block in <class:ApplicationController>'
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/users_controller.rb:1:in `<main>'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 08:41:55 -0700
+Processing by UsersController#login as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = NULL OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `login'
+Completed 401 Unauthorized in 45ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 23602)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 08:43:05 -0700
+  
+NoMethodError (undefined method `enable' for ApplicationController:Class):
+  
+app/controllers/application_controller.rb:10:in `block in <class:ApplicationController>'
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/users_controller.rb:1:in `<main>'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 08:48:30 -0700
+  
+NoMethodError (undefined method `before' for ApplicationController:Class):
+  
+app/controllers/application_controller.rb:13:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/users_controller.rb:1:in `<main>'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 08:48:54 -0700
+  
+NoMethodError (undefined method `options' for ApplicationController:Class):
+  
+app/controllers/application_controller.rb:17:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/users_controller.rb:1:in `<main>'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 08:49:16 -0700
+Processing by UsersController#login as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = NULL OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `login'
+Completed 401 Unauthorized in 15ms (Views: 0.3ms | ActiveRecord: 1.6ms | Allocations: 3451)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 08:51:08 -0700
+Processing by UsersController#login as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = NULL OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `login'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 729)
+
+

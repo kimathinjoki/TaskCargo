@@ -62,9 +62,9 @@ function Home({handleLogout, user}){
                 { tasks.length > 0 ? (
                     tasks.map((task) => <TaskItem task={task}/>)) : null }
 
-                    <Routes>
+                    {/* <Routes>
                         <Route path="/todo/edit" element={<EditTask/>}/>
-                    </Routes>
+                    </Routes> */}
 
 
 

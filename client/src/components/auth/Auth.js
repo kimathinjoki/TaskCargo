@@ -26,8 +26,8 @@ function Auth( {signup} ){
 	// 		body: JSON.stringify({ username, password }),
 	// 	})
     //         .then((r) =>{
-	// 			setIsLoading(false);
-    //             if(r.ok){
+	// 			// setIsLoading(false);
+    //             if(r.status === 200){
     //                 r.json().then((user)=> signup(user))
     //             }
     //         })
@@ -45,6 +45,7 @@ function Auth( {signup} ){
 	  // do something with the response, such as saving the user information
 	  if (response.status === 200) {
 		const id = response.data.id;
+		console.log(response.data)
 		signup(response.data)
 		localStorage.setItem('id', id);
 		// setIsLoading(true);
