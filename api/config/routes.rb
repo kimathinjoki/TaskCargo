@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
+  match '(:anything)' => 'application#nothing', via: [:options]
 
   #user
   post '/users', to: "users#register"

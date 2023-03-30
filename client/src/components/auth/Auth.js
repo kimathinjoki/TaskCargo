@@ -28,7 +28,7 @@ function Auth( {signup} ){
     //         .then((r) =>{
 	// 			// setIsLoading(false);
     //             if(r.status === 200){
-    //                 r.json().then((user)=> signup(user))
+    //                 r.json().then((user)=> signup(user.data.user))
     //             }
     //         })
     // }
@@ -36,7 +36,7 @@ function Auth( {signup} ){
 	const handleLogin = event => {
 		event.preventDefault();
 	
-		axios.post('https://taskcargobacke.onrender.com/users/login', {
+		axios.post('http://127.0.0.1:3000/users/login', {
 	  username,
 	 password
 	})
@@ -45,13 +45,13 @@ function Auth( {signup} ){
 	  // do something with the response, such as saving the user information
 	  if (response.status === 200) {
 		const id = response.data.id;
-		console.log(response.data)
+		console.log(response.data.user)
 		signup(response.data)
 		localStorage.setItem('id', id);
 		// setIsLoading(true);
 	  }
 	})
-}
+	}
 
 
 

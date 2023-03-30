@@ -6,12 +6,21 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
+
+
+
 module Api
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
 
+    config.action_dispatch.default_headers = {
+      'Access-Control-Allow-Origin' => '*',
+      'Access-Control-Request-Method' => 'GET, PATCH, PUT, POST, OPTIONS, DELETE',
+      'Access-Control-Allow-Headers:' => 'Origin, X-Requested-With, Content-Type, Accept'
+    }
     # Cookies and sessions
         # Adding cookies and session middleware
         config.middleware.use ActionDispatch::Cookies
@@ -25,7 +34,7 @@ module Api
     # in config/environments, which are processed later.
     # config.middleware.insert_before 0, Rack::Cors do
     #   allow do
-    #     origins 'http://localhost:3000'
+    #     origins '*'
     #     resource '*', headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head]
     #   end
     # end
