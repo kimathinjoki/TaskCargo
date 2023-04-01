@@ -2,7 +2,7 @@ class User < ApplicationRecord
 
     has_secure_password
 
-    has_many :todos
+    # has_many :todos
 
     validates :username, {
         length:{minimum: 3, maximum: 10}, 

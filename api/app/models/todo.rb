@@ -1,5 +1,5 @@
 class Todo < ApplicationRecord
-  belongs_to :user
+  # belongs_to :user
 
   enum :status, [:CREATED, :STARTED, :COMPLETED, :CANCELLED]
   enum :priority, [:LOW, :MEDIUM, :HIGH]

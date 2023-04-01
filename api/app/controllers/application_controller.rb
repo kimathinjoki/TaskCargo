@@ -21,58 +21,58 @@ class ApplicationController < ActionController::API
 #     200
 #   end
 
-def nothing
-    render text: '', content_type: 'text/plain'
-end
+# def nothing
+#     render text: '', content_type: 'text/plain'
+# end
 
     # has data into web token
 
-    def encode(uid,email)
+    # def encode(uid,email)
 
-        payload ={
-            data: {
-                uid: uid,
-                email: email
-            },
-            exp: Time.now.to_i + (6*3600)
-        }
+    #     payload ={
+    #         data: {
+    #             uid: uid,
+    #             email: email
+    #         },
+    #         exp: Time.now.to_i + (6*3600)
+    #     }
 
-        begin
-        JWT.encode(payload, ENV['task_cargo_key'], 'HS256')
-        rescue  JWT::EncodeError => e 
-            app_response(message: "failed", status: 400, data: {info: "Something went wrong. PLease try againkjh\\"})
+    #     begin
+    #     JWT.encode(payload, ENV['task_cargo_key'], 'HS256')
+    #     rescue  JWT::EncodeError => e 
+    #         app_response(message: "failed", status: 400, data: {info: "Something went wrong. PLease try againkjh\\"})
 
 
-        end
-    end
+    #     end
+    # end
 
 
     # unhash the token
 
-    def decode(token)
-        begin
-        JWT.decode(token, ENV['task_cargo_key'], true, {algorith: 'HS256'})
-        rescue JWT::DecodeError => e 
-            app_response(message: "failed", status: 401, data: {info: "Session expired. Please login again"})
-        end
+    # def decode(token)
+    #     begin
+    #     JWT.decode(token, ENV['task_cargo_key'], true, {algorith: 'HS256'})
+    #     rescue JWT::DecodeError => e 
+    #         app_response(message: "failed", status: 401, data: {info: "Session expired. Please login again"})
+    #     end
 
-    end
+    # end
 
     # Verify auth
 
-    def verify_auth
-        auth_headers = request.headers['Authorization']
-        if !auth_headers 
-            app_response(message: "failed", status: 401, data: {info: "Your request is not authorized"})
-        else
-        token = auth_headers.split(' ')[1]
-        decode(token)[0]['data']
-        save_user_id(token)
-        # render json: {
-        #     data: decode(token)[0]['data']
-        # }
-        end
-    end
+    # def verify_auth
+    #     auth_headers = request.headers['Authorization']
+    #     if !auth_headers 
+    #         app_response(message: "failed", status: 401, data: {info: "Your request is not authorized"})
+    #     else
+    #     token = auth_headers.split(' ')[1]
+    #     decode(token)[0]['data']
+    #     save_user_id(token)
+    #     # render json: {
+    #     #     data: decode(token)[0]['data']
+    #     # }
+    #     end
+    # end
 
     # request = {
     #     headers: {
@@ -109,9 +109,9 @@ end
     
 
     # save user's id
-    def save_user_id
-        @uid = decode(token)[0]["data"]["uid"].to_i
-    end
+    # def save_user_id
+    #     @uid = decode(token)[0]["data"]["uid"].to_i
+    # end
 
     #  get user session
 

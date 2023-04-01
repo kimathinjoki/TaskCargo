@@ -1,11 +1,12 @@
 import React, {useState} from "react";
-import axios from 'axios';
+import { Navigate } from "react-router-dom";
 
 function Register({signup}){
 
     const [email, setEmail] = useState('')
     const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 
     // const handleSubmit = event => {
@@ -31,24 +32,30 @@ function Register({signup}){
 
     function handleSubmit(e){
 		e.preventDefault();
-		fetch("https://taskcargobacke.onrender.com/users", {
-			mode: 'no-cors',
+		fetch("http://127.0.0.1:3000/users", {
+            mode: "no-cors",
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-
 			},
 			body: JSON.stringify({ email, username, password }),
 		})
         .then((r) => {
-            if (r.status === 200) {
-              r.json().then((user) => signup(user));
+            if (r.status.created) {
+              r.json().then((user) =>{
+                signup(user)
+                console.log(user)
+                setIsLoggedIn(true)
+            });
             }
           });
 	}
 
 
 
+    if (isLoggedIn) {
+        return <Navigate to="/home" />;
+      }
 
 
     return(
@@ -59,9 +66,11 @@ function Register({signup}){
                 <div className="group">
     <label for="user" className="label">Username</label>
     <input id="user" type="text" className="input" value={username} onChange={(e)=>{
-        e.preventDefault()
         setUsername(e.target.value)}} />
                 </div>
+
+
+                
 
 
             <div className="group">

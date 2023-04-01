@@ -7,9 +7,10 @@ class UsersController < ApplicationController
 
     def register
         user = User.create(user_params)
-        if user.valid? 
+        if user.valid?
             save_user(user.id)
-            app_response(message:"Registration was successful", status: :created, data: user)
+            # app_response(message:"Registration was successful", status: :created, data: user)
+            render json: user, status: :created
         else
             app_response(message:"Registration failed", status: :unprocessable_entity, data: user.errors)
         end
@@ -26,8 +27,9 @@ class UsersController < ApplicationController
 
         if user&.authenticate(user_params[:password])
             save_user(user.id)
-            token = encode(user.id, user.email)
-            app_response(message: "Login successful", status: :ok, data: {user:user, token:token})
+            # token = encode(user.id, user.email)
+            # app_response(message: "Login successful", status: :ok, data: {user:user, token:token})
+            render json: user, status: :ok
         else
             app_response(message: "Invalid username or password", status: :unauthorized)
         end
@@ -57,7 +59,7 @@ class UsersController < ApplicationController
 
     def user_params 
 
-        params.permit(:username, :email, :password)
+        params.require(:user).permit(:username, :email, :password)
 
     end
 

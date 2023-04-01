@@ -2,6 +2,7 @@ import {React, useState}from "react";
 import './Auth.css'
 import Register from "./Register";
 import axios from 'axios';
+import { Navigate } from "react-router-dom";
 
 
 function Auth( {signup} ){
@@ -9,49 +10,57 @@ function Auth( {signup} ){
 
     const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	// const [isLoading, setIsLoading] = useState(false);
 	// const [email, setEmail] = useState('');
 
 
 	
 
-    // function handleLogin(e){
-    //     e.preventDefault();
-    //     fetch("http://127.0.0.1:3000/users/login",{
-	// 		mode: 'no-cors',
-	// 		method: 'POST',
-	// 		headers: {
-	// 			'Content-Type': 'application/json',
-	// 		},
-	// 		body: JSON.stringify({ username, password }),
-	// 	})
-    //         .then((r) =>{
-	// 			// setIsLoading(false);
-    //             if(r.status === 200){
-    //                 r.json().then((user)=> signup(user.data.user))
-    //             }
-    //         })
-    // }
+    function handleLogin(e){
+        e.preventDefault();
+        fetch("http://127.0.0.1:3000/users/login",{
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ username, password }),
+		})
+            .then((r) =>{
+				// setIsLoading(false);
+                if(r.status.ok){
+                    r.json().then((user)=>{
+						signup(user)
+						setIsLoggedIn(true)
 
-	const handleLogin = event => {
-		event.preventDefault();
+					})
+                }
+            })
+    }
+
+	if (isLoggedIn) {
+        return <Navigate to="/home" />;
+      }
+
+	// const handleLogin = event => {
+	// 	event.preventDefault();
 	
-		axios.post('http://127.0.0.1:3000/users/login', {
-	  username,
-	 password
-	})
-	.then(response => {
-	  console.log(response);
-	  // do something with the response, such as saving the user information
-	  if (response.status === 200) {
-		const id = response.data.id;
-		console.log(response.data.user)
-		signup(response.data)
-		localStorage.setItem('id', id);
-		// setIsLoading(true);
-	  }
-	})
-	}
+	// 	axios.post('http://127.0.0.1:3000/users/login', {
+	//   username,
+	//  password
+	// })
+	// .then(response => {
+	//   console.log(response);
+	//   // do something with the response, such as saving the user information
+	//   if (response.status === 200) {
+	// 	const id = response.data.id;
+	// 	console.log(response.data.user)
+	// 	signup(response.data)
+	// 	localStorage.setItem('id', id);
+	// 	// setIsLoading(true);
+	//   }
+	// })
+	// }
 
 
 
@@ -74,7 +83,7 @@ function Auth( {signup} ){
 				</div>
 				<div className="group">
 					<label for="pass" className="label">Password</label>
-					<input id="pass" type="password" className="input" data-type="password" onChange={(e)=> setPassword(e.target.value)} />
+					<input id="pass" type="password" className="input" data-type="password" value={password} onChange={(e)=> setPassword(e.target.value)} />
 				</div>
 			
 				<div className="group">
